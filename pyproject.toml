@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "delete-exif"
+version = "0.1.0"
+description = "Development scaffold for removing EXIF metadata from PNG files."
+requires-python = ">=3.9"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 88
+target-version = ["py39"]
+include = '\.pyi?$'
+exclude = '''
+/(\.git|\.venv|\.eggs|\.build|build|dist)/
+'''
