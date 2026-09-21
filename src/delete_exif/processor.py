@@ -1,6 +1,5 @@
 from pathlib import Path
-
-from .metadata import remove_metadata
+from metadata import remove_metadata
 
 delete_keys = {"Description", "Software", "Source", "Generation time", "Comment"}
 
@@ -8,10 +7,14 @@ delete_keys = {"Description", "Software", "Source", "Generation time", "Comment"
 def process_directory(
     input_dir: Path,
     output_dir: Path,
-    delete_keys: str[str],
 ) -> None:
 
+    input_dir=Path(input_dir)
+    output_dir=Path(output_dir)
     for input_path in input_dir.glob("*.png"):
-        output_path = output_dir / input_path.name
+        output_path = output_dir / f"clean_{input_path.name}"
 
         remove_metadata(input_path=input_path, output_path=output_path)
+
+if __name__ == "__main__":
+    process_directory("/Users/masahirokawamata/work/make_app/delete_exif/tests/test_images", "/Users/masahirokawamata/work/make_app/delete_exif/tests/test_images")
