@@ -22,7 +22,7 @@ def remove_metadata(input_path: Path, output_path: Path) -> None:
 
 if __name__ == "__main__":
     input_path = Path("tests/test_images/test.png")
-    output_path = Path("tests/test_images/output_test.png")
+    output_path = Path("tests/test_images/output/output_test.png")
 
     remove_metadata(input_path, output_path)
 
