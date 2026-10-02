@@ -1,6 +1,6 @@
 from pathlib import Path
 import uuid
-from metadata import remove_metadata
+from .metadata import remove_metadata
 
 delete_keys = {"Description", "Software", "Source", "Generation time", "Comment"}
 

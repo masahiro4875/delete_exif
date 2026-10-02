@@ -1,5 +1,5 @@
 from pathlib import Path
-from processor import process_directory
+from .processor import process_directory
 
 
 def main() -> None:
